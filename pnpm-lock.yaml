@@ -18,8 +18,8 @@ importers:
         specifier: 1.2.1
         version: 1.2.1(zod@3.24.2)
       '@apidevtools/swagger-parser':
-        specifier: 10.1.0
-        version: 10.1.0(openapi-types@12.1.3)
+        specifier: 12.0.0
+        version: 12.0.0(openapi-types@12.1.3)
       '@faker-js/faker':
         specifier: '>=8'
         version: 8.4.1
@@ -168,6 +168,10 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
+  '@apidevtools/json-schema-ref-parser@14.0.1':
+    resolution: {integrity: sha512-Oc96zvmxx1fqoSEdUmfmvvb59/KDOnUoJ7s2t7bISyAn0XEz57LCCw8k2Y4Pf3mwKaZLMciESALORLgfe2frCw==}
+    engines: {node: '>= 16'}
+
   '@apidevtools/json-schema-ref-parser@9.0.6':
     resolution: {integrity: sha512-M3YgsLjI0lZxvrpeGVk9Ap032W6TPQkH6pRAZz81Ac3WUNF79VQooAFnp8umjvVzUmD93NkogxEwbSce7qMsUg==}
 
@@ -180,6 +184,11 @@ packages:
 
   '@apidevtools/swagger-parser@10.1.0':
     resolution: {integrity: sha512-9Kt7EuS/7WbMAUv2gSziqjvxwDbFSg3Xeyfuj5laUODX8o/k/CpsAKiQ8W7/R88eXFTMbJYg6+7uAmOWNKmwnw==}
+    peerDependencies:
+      openapi-types: '>=7'
+
+  '@apidevtools/swagger-parser@12.0.0':
+    resolution: {integrity: sha512-WLJIWcfOXrSKlZEM+yhA2Xzatgl488qr1FoOxixYmtWapBzwSC0gVGq4WObr4hHClMIiFFdOBdixNkvWqkWIWA==}
     peerDependencies:
       openapi-types: '>=7'
 
@@ -842,6 +851,9 @@ packages:
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
+
+  '@types/json-schema@7.0.15':
+    resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
   '@types/lodash@4.17.6':
     resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
@@ -2310,6 +2322,11 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
+  '@apidevtools/json-schema-ref-parser@14.0.1':
+    dependencies:
+      '@types/json-schema': 7.0.15
+      js-yaml: 4.1.0
+
   '@apidevtools/json-schema-ref-parser@9.0.6':
     dependencies:
       '@jsdevtools/ono': 7.1.3
@@ -2326,6 +2343,16 @@ snapshots:
       '@apidevtools/openapi-schemas': 2.1.0
       '@apidevtools/swagger-methods': 3.0.2
       '@jsdevtools/ono': 7.1.3
+      ajv: 8.17.1
+      ajv-draft-04: 1.0.0(ajv@8.17.1)
+      call-me-maybe: 1.0.2
+      openapi-types: 12.1.3
+
+  '@apidevtools/swagger-parser@12.0.0(openapi-types@12.1.3)':
+    dependencies:
+      '@apidevtools/json-schema-ref-parser': 14.0.1
+      '@apidevtools/openapi-schemas': 2.1.0
+      '@apidevtools/swagger-methods': 3.0.2
       ajv: 8.17.1
       ajv-draft-04: 1.0.0(ajv@8.17.1)
       call-me-maybe: 1.0.2
@@ -2968,6 +2995,8 @@ snapshots:
   '@types/diff-match-patch@1.0.36': {}
 
   '@types/estree@1.0.6': {}
+
+  '@types/json-schema@7.0.15': {}
 
   '@types/lodash@4.17.6': {}
 
